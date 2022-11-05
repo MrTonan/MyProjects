@@ -19,6 +19,6 @@ int main()
 	}
 	else
 	{
-		std::cout << ForResult << " isn't palindrome";
+		std::cout << ForResult << " isn't palindrome!";
 	}
 }

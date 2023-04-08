@@ -6,10 +6,10 @@ int main()
 	ushort amount = 0;
 	ushort marks = 0;
 	ushort buff = 0;
-	
+
 	std::cout << "Enter amount of marks: ";
-	std::cin << amount;
-	
+	std::cin >> amount;
+
 	std::cout << "Enter your marks: ";
 
 	for (ushort i = 0; i < amount; i++)
@@ -17,6 +17,6 @@ int main()
 		std::cin >> buff;
 		marks += buff;
 	}
-	std::cout << "Your GPA is: " << marks / 19.00 << std::endl;
+	std::cout << "Your GPA is: " << marks / (amount*1.00) << std::endl;
 	return 1;
 }

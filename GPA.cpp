@@ -3,12 +3,16 @@
 int main()
 {
 	typedef unsigned short ushort;
+	ushort amount = 0;
 	ushort marks = 0;
 	ushort buff = 0;
-
+	
+	std::cout << "Enter amount of marks: ";
+	std::cin << amount;
+	
 	std::cout << "Enter your marks: ";
 
-	for (ushort i = 0; i < 19; i++)
+	for (ushort i = 0; i < amount; i++)
 	{
 		std::cin >> buff;
 		marks += buff;

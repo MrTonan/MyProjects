@@ -16,11 +16,11 @@ int main()
 		{
 			break;
 		}
-		std::cout << "Функции: " << std::endl;
-		std::cout << " 1. Открыть инвентарь" << std::endl;
-		std::cout << " 2. Добавить в инвентарь" << std::endl;
-		std::cout << " 3. Очистить инвентарь" << std::endl;
-		std::cout << " Иначе. Выйти" << std::endl;
+		std::cout << "Functions: " << std::endl;
+		std::cout << " 1. Open Inventory" << std::endl;
+		std::cout << " 2. Add item to inventory" << std::endl;
+		std::cout << " 3. Clear inventory" << std::endl;
+		std::cout << " Else. Exit" << std::endl;
 
 		std::cin >> input;
 
@@ -30,9 +30,9 @@ int main()
 			inv.seeInventory();
 			break;
 		case('2'):
-			std::cout << "Введите имя предмета: ";
+			std::cout << "Enter item's name: ";
 			std::cin >> name;
-			std::cout << "Введите колличество предметов: ";
+			std::cout << "Enter item's amount: ";
 			std::cin >> amount;
 			inv.addToInventory(amount, name);
 			break;
@@ -40,7 +40,7 @@ int main()
 			inv.clearInventory();
 			break;
 		default:
-			std::cout << "Выходим" << std::endl;
+			std::cout << "Exiting..." << std::endl;
 			break;
 		}
 	}

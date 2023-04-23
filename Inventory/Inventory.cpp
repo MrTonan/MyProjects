@@ -3,7 +3,6 @@
 
 Inventory::Inventory()
 {
-	setlocale(LC_ALL, "Russian");
 	for (short int i = 0; i < 10; i++)
 	{
 		inventoryArray[i].itemAmount = 0;
@@ -31,7 +30,7 @@ void Inventory::addToInventory(short int addItemAmount, std::string addItemName)
 		{
 			inventoryArray[i].itemAmount = addItemAmount;
 			inventoryArray[i].itemName = addItemName;
-			std::cout << "Предмет добавлен в инвентарь" << std::endl << std::endl;
+			std::cout << "Item succesful added to inventory" << std::endl << std::endl;
 			break;
 		}
 	}

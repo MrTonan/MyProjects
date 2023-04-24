@@ -12,28 +12,44 @@ Inventory::Inventory()
 };
 void Inventory::seeInventory()
 {
-	std::cout << "------------------------------" << std::endl;
 	for (short int i = 0; i < 10; i++)
 	{
 		if (inventoryArray[i].itemAmount != 0)
 		{
-			std::cout << inventoryArray[i].itemName << "   x" << inventoryArray[i].itemAmount << std::endl;
+			std::cout << "[" << i + 1 << "]" << inventoryArray[i].itemName << "   x" << inventoryArray[i].itemAmount << std::endl;
 		}
-	}
-	std::cout << "------------------------------" << std::endl;
-}
-void Inventory::addToInventory(short int addItemAmount, std::string addItemName)
-{
-	for (short int i = 0; i < 10; i++)
-	{
-		if (inventoryArray[i].itemAmount == 0)
+		else
 		{
-			inventoryArray[i].itemAmount = addItemAmount;
-			inventoryArray[i].itemName = addItemName;
-			std::cout << "Item succesful added to inventory" << std::endl << std::endl;
-			break;
+			std::cout << "[" << i + 1 << "]" << std::endl;
 		}
 	}
+}
+void Inventory::addToInventory(unsigned short addItemAmount = 0, std::string addItemName = "0", unsigned short addItemSlot = 0)
+{
+	if (addItemSlot <= 10)
+	{
+		inventoryArray[addItemSlot].itemAmount = addItemAmount;
+		inventoryArray[addItemSlot].itemName = addItemName;
+	}
+	else
+	{
+		for (short int i = 0; i < 10; i++)
+		{
+			if (inventoryArray[i].itemAmount == 0)
+			{
+				inventoryArray[i].itemAmount = addItemAmount;
+				inventoryArray[i].itemName = addItemName;
+				std::cout << "Item succesful added to inventory" << std::endl << std::endl;
+				break;
+			}
+		}
+
+	}
+}
+void Inventory::removeInventorySlot(unsigned short removeItemSlot)
+{
+	inventoryArray[removeItemSlot].itemAmount = 0;
+	inventoryArray[removeItemSlot].itemName = "";
 }
 void Inventory::clearInventory()
 {

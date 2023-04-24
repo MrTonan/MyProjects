@@ -5,15 +5,15 @@ class Inventory
 public:
 	Inventory();
 	void seeInventory();
-	void addToInventory(short int addItemAmount, std::string addItemName);
+	void addToInventory(unsigned short addItemAmount, std::string addItemName, unsigned short addItemSlot);
+	void removeInventorySlot(unsigned short removeItemSlot);
 	void clearInventory();
 private:
 	struct inventorySlot
 	{
-		short int itemAmount;
-		std::string itemName;
+		unsigned short itemAmount = 0;
+		std::string itemName = "0";
 	};
 
 	inventorySlot inventoryArray[10];
 };
-
